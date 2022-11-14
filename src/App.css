@@ -43,7 +43,6 @@
 }
 
 .addnexportbuttondiv {
-  padding-top: 20px;
   display: inline-block;
   margin-right: 10px;
 }
@@ -51,4 +50,10 @@
 a {
   margin-right: 20px;
   font-size: 1.1em;
+}
+
+.routerlinks {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }

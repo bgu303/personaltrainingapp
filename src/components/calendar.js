@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 
@@ -7,7 +7,7 @@ function TrainingCalendar() {
     const [dates2, setDates2] = useState([])
     
     useEffect(() => {
-        fetch("https://customerrest.herokuapp.com/api/trainings")
+        fetch("https://customerrest.herokuapp.com/gettrainings")
         .then(response => {
             if (response.ok) {
                 return response.json()
@@ -15,20 +15,22 @@ function TrainingCalendar() {
                 alert("Something went wrong fething the trainings data")
             }
         })
-        .then(responseData => setDates2(responseData.content))
+        .then(responseData => setDates2(responseData))
     }, [])
+
+    console.log(dates2[5]?.date)
 
     const [dates, setDates] = useState([{
         id: 0,
-        title: 'All Day Event very long title',
-        start: new Date(2022, 3, 1, 2, 3, 3),
-        end: new Date(2022, 3, 1),
+        title: "ei toimiXD",
+        start: new Date("2022-11-16T11:00:00.000+00:00"),
+        end: new Date(2022, 10, 18, 19, 30)
       }
     ])
 
     return (
         <>
-            <div className="myCustomHeight" style={{height: 500}}>
+            <div className="myCustomHeight" style={{height: 800}}>
                 <Calendar
                     localizer={localizer}
                     events={dates}

@@ -19,7 +19,7 @@ function Customers() {
       .then(response => response.json())
       .then(responseData => setUsers(responseData.content))
   }
-
+  
   const addCustomer = (customer) => {
     fetch("https://customerrest.herokuapp.com/api/customers", {
       method: "POST",

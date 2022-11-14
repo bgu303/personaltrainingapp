@@ -17,12 +17,12 @@ function App() {
         </Toolbar>
       </AppBar>
       <BrowserRouter>
-        <Link to="/trainings">Trainings</Link>{' '}
-        <Link to="/customers">Customers</Link>{' '}
-        <Link to="/calendar">Calendar</Link>{" "}
+        <Link className="routerlinks" to="/customers">Customers</Link>{' '}
+        <Link className="routerlinks" to="/trainings">Trainings</Link>{' '}
+        <Link className="routerlinks" to="/calendar">Calendar</Link>{" "}
         <Routes>
-          <Route path="/trainings" element={<Trainings />}></Route>
           <Route path="/customers" element={<Customers />}></Route>
+          <Route path="/trainings" element={<Trainings />}></Route>
           <Route path="/calendar" element={<TrainingCalendar />}></Route>
         </Routes>
       </BrowserRouter>
