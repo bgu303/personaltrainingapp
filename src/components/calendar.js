@@ -19,11 +19,11 @@ function TrainingCalendar() {
     }, [])
 
     console.log(dates2[5]?.date)
-
+    
     const [dates, setDates] = useState([{
         id: 0,
         title: "ei toimiXD",
-        start: new Date("2022-11-16T11:00:00.000+00:00"),
+        start: new Date("2022-11-18T05:02:34.738+00:00"),
         end: new Date(2022, 10, 18, 19, 30)
       }
     ])

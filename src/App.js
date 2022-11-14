@@ -13,7 +13,7 @@ function App() {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">My Training Schedule Pages</Typography>
+          <Typography variant="h6">My Personal Training Scheduling Pages</Typography>
         </Toolbar>
       </AppBar>
       <BrowserRouter>

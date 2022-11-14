@@ -125,10 +125,10 @@ function Customers() {
           <AddCustomer addCustomer={addCustomer} />
         </div>
         <div className="addnexportbuttondiv">
-          <Button variant="outlined" onClick={exportCsv}>Export CSV</Button>
+          <Button variant="outlined" onClick={exportCsv}>Export customers CSV</Button>
         </div>
       </div>
-      <div className="ag-theme-material" style={{ height: 500, width: "100%", margin: "auto" }}>
+      <div className="ag-theme-material" style={{ height: 500, width: "90%", margin: "auto" }}>
         <AgGridReact
           ref={gridRef}
           rowData={users}
