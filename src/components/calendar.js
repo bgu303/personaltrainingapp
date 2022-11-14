@@ -21,8 +21,7 @@ function TrainingCalendar() {
     const [dates, setDates] = useState([{
         id: 0,
         title: 'All Day Event very long title',
-        allDay: true,
-        start: new Date(dates2[3]),
+        start: new Date(2022, 3, 1, 2, 3, 3),
         end: new Date(2022, 3, 1),
       }
     ])
