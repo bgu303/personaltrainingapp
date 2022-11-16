@@ -45,11 +45,26 @@
 .addnexportbuttondiv {
   display: inline-block;
   margin-right: 10px;
+  margin-top: 20px;
+}
+
+.calendar, .trainingwrapper {
+  margin-top: 20px;
+}
+
+.trainings {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
   margin-right: 20px;
   font-size: 1.1em;
+}
+
+.tabs {
+  text-decoration: underline;
 }
 
 .routerlinks {
