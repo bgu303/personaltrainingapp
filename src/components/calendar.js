@@ -4,7 +4,7 @@ import moment from 'moment'
 
 function TrainingCalendar() {
     const localizer = momentLocalizer(moment)
-    const [dates2, setDates2] = useState([])
+    const [dates, setDates] = useState([])
 
     useEffect(() => {
         fetch("https://customerrest.herokuapp.com/gettrainings")
@@ -15,18 +15,17 @@ function TrainingCalendar() {
                     alert("Something went wrong fething the trainings data")
                 }
             })
-            .then(responseData => setDates2(responseData))
+            .then(responseData => setDates(responseData))
     }, [])
 
-    console.log(dates2[5]?.date)
-
-    const [dates, setDates] = useState([{
-        id: 0,
-        title: "ei toimiXD",
-        start: new Date("2022-11-20T05:01:51.668+00:00"),
-        end: new Date(2022, 11, 21, 19, 30)
-    }
-    ])
+    const events = dates.map((training) => 
+        training =
+        {
+          title: training.activity + " / " + training.customer.firstname + " " + training.customer.lastname,
+          start: moment(training.date).toDate(),
+          end: moment(training.date).add(training.duration, "minutes").toDate(),
+        }
+    );
 
     return (
         <>
@@ -34,8 +33,9 @@ function TrainingCalendar() {
                 <div className="myCustomHeight" style={{ height: 800 }}>
                     <Calendar
                         localizer={localizer}
-                        events={dates}
+                        events={events}
                         startAccessor="start"
+                        titleAccessor="title"
                         endAccessor="end"
                     />
                 </div>
