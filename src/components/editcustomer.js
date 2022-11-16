@@ -38,7 +38,7 @@ function EditCustomer(props) {
           <Button startIcon={<Edit />} size="small" onClick={handleClickOpen}>
           </Button>
           <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>Edit Car</DialogTitle>
+            <DialogTitle>Edit Customer</DialogTitle>
             <DialogContent>
               <TextField
                 margin="dense"
