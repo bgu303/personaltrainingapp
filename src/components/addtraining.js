@@ -30,7 +30,12 @@ function AddTraining(props) {
     };
 
     const handleSave = () => {
-
+        setTraining({
+            date: "",
+            duration: "",
+            activity: "",
+            customer: props.data.links[0].href
+        })
         props.addTraining(training)
         setOpen(false)
     }
@@ -69,6 +74,7 @@ function AddTraining(props) {
                 </DialogContent>
                 <DialogContent>
                     <TextField
+                        type="number"
                         margin="dense"
                         label="Duration"
                         fullWidth
