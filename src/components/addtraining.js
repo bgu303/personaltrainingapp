@@ -30,6 +30,7 @@ function AddTraining(props) {
     };
 
     const handleSave = () => {
+
         props.addTraining(training)
         setOpen(false)
     }
@@ -43,7 +44,7 @@ function AddTraining(props) {
             <Button startIcon={<DirectionsRunIcon />} size="small" onClick={handleClickOpen}>
             </Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Add training to customer</DialogTitle>
+                <DialogTitle>Add training to customer<br></br>{props.data.firstname} {props.data.lastname}</DialogTitle>
                 <DialogContent>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DateTimePicker

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
-import { Calendar, momentLocalizer } from 'react-big-calendar'
-import moment from 'moment'
+import React, { useEffect, useState } from "react";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
 
 function TrainingCalendar() {
     const localizer = momentLocalizer(moment)

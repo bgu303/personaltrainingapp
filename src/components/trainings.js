@@ -1,9 +1,9 @@
-import React from "react"
-import { useState, useEffect } from "react"
-import { AgGridReact } from 'ag-grid-react';
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-material.css';
-import Button from '@mui/material/Button';
+import React from "react";
+import { useState, useEffect } from "react";
+import { AgGridReact } from "ag-grid-react";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-material.css";
+import Button from "@mui/material/Button";
 
 function Trainings() {
 
@@ -39,8 +39,9 @@ function Trainings() {
         {field : "customer.firstname", headerName: "First Name", sortable: true, filter: true},
         {field : "customer.lastname", headerName: "Last Name", sortable: true, filter: true},
         {
-          cellRenderer: params => <Button size="small" color="error" onClick={() => deleteTraining(params.data)}>Delete training</Button>
-        }
+          cellRenderer: params => <Button size="small" color="error" onClick={() => deleteTraining(params.data)}>Delete training</Button>,
+          headerName: "Delete Training"
+        },
     ])
 
     useEffect(() => {

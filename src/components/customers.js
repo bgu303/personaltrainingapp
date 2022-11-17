@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react";
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
@@ -10,7 +10,6 @@ import AddTraining from "./addtraining";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 function Customers() {
-
   const [users, setUsers] = useState([])
   const gridRef = useRef();
 
@@ -18,8 +17,9 @@ function Customers() {
     fetch("https://customerrest.herokuapp.com/api/customers")
       .then(response => response.json())
       .then(responseData => setUsers(responseData.content))
+      .catch(err => console.log(err))
   }
-  
+
   const addCustomer = (customer) => {
     fetch("https://customerrest.herokuapp.com/api/customers", {
       method: "POST",
@@ -31,23 +31,6 @@ function Customers() {
           getUsers();
         } else {
           alert("Something went wrong adding a customer!")
-        }
-      })
-      .catch(err => console.log(err))
-  }
-
-  const addTraining = (training) => {
-    console.log(training)
-    fetch("https://customerrest.herokuapp.com/api/trainings", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify(training)
-    })
-      .then(response => {
-        if (response.ok) {
-          getUsers()
-        } else {
-          alert("Something went wrong adding training!")
         }
       })
       .catch(err => console.log(err))
@@ -79,6 +62,23 @@ function Customers() {
     }
   }
 
+  const addTraining = (training) => {
+    console.log(training)
+    fetch("https://customerrest.herokuapp.com/api/trainings", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(training)
+    })
+      .then(response => {
+        if (response.ok) {
+          getUsers()
+        } else {
+          alert("Something went wrong adding training!")
+        }
+      })
+      .catch(err => console.log(err))
+  }
+
   const [columnDefs] = useState([
     { field: "firstname", sortable: true, filter: true, width: 130 },
     { field: "lastname", sortable: true, filter: true, width: 130 },
@@ -89,8 +89,8 @@ function Customers() {
     { field: "phone", sortable: true, filter: true, width: 120 },
     {
       cellRenderer: params => <AddTraining
-        data={params.data}
-        addTraining={addTraining} />,
+      data={params.data}
+      addTraining={addTraining} />,
       headerName: "Add Training",
       width: 150
     },
@@ -101,7 +101,7 @@ function Customers() {
     },
     {
       cellRenderer: params => <Button size="small" color="error" startIcon={<DeleteIcon />}
-        onClick={() => deleteCustomer(params.data)}></Button>,
+      onClick={() => deleteCustomer(params.data)}></Button>,
       headerName: "Delete Customer"
     }
   ])

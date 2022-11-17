@@ -1,14 +1,12 @@
-import './App.css';
-import { useState } from 'react';
-import Customers from './components/customers';
-import Trainings from "./components/trainings"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import { Tabs, Tab } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import TrainingCalendar from './components/calendar';
-
+import "./App.css";
+import { useState } from "react";
+import Customers from "./components/customers";
+import Trainings from "./components/trainings";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import { Tabs, Tab } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import TrainingCalendar from "./components/calendar";
 
 function App() {
   const [page, setPage] = useState("customers")
