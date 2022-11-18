@@ -7,6 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import { Tabs, Tab } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TrainingCalendar from "./components/calendar";
+import TrainingChart from "./components/trainingchart";
 
 function App() {
   const [page, setPage] = useState("customers")
@@ -25,12 +26,14 @@ function App() {
           <Tab label="Customers" className="tabs" value="customers"></Tab>
           <Tab label="Trainings" className="tabs" value="trainings"></Tab>
           <Tab label="Calendar" className="tabs" value="calendar"></Tab>
+          <Tab label="Chart" className="tabs" value="chart"></Tab>
 
         </Tabs>
       </AppBar>
       {page === "customers" && <Customers />}
       {page === "trainings" && <Trainings />}
       {page === "calendar" && <TrainingCalendar />}
+      {page === "chart" && <TrainingChart />}
     </>
   );
 }

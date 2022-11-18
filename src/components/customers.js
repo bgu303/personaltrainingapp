@@ -86,7 +86,7 @@ function Customers() {
     { field: "postcode", sortable: true, filter: true, width: 120 },
     { field: "city", sortable: true, filter: true, width: 120 },
     { field: "email", sortable: true, filter: true, width: 180 },
-    { field: "phone", sortable: true, filter: true, width: 120 },
+    { field: "phone", sortable: true, filter: true, width: 150 },
     {
       cellRenderer: params => <AddTraining
       data={params.data}
